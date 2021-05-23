@@ -2,26 +2,28 @@ import {Loader} from "@googlemaps/js-api-loader";
 import {combineLatest, from} from "rxjs";
 
 const loader = new Loader({
-    // apiKey: "AIzaSyC1F1TCvIv5Ff_ZdfV-KXucnQ-JrsdbZaw",
-    apiKey: "",
+    apiKey: "AIzaSyC1F1TCvIv5Ff_ZdfV-KXucnQ-JrsdbZaw",
     version: "weekly",
     libraries: []
 })
 
+/**
+ * google mapを表示する
+ */
 export class GoogleMap extends HTMLElement {
+    private map: google.maps.Map
+
     constructor() {
         super();
 
         this.attachShadow({mode: "open"})
-        const wrapper = document.createElement("div")
-        wrapper.setAttribute("style", "height: 100%;")
-        this.shadowRoot.append(wrapper)
+        this.shadowRoot.innerHTML = require('./google-map.html').default
 
-        console.log(this.dataset)
+        const wrapper = this.shadowRoot.querySelector('#map')
 
         from(loader.load())
             .subscribe((_) => {
-                new google.maps.Map(wrapper, {
+                this.map = new google.maps.Map(wrapper, {
                     center: {
                         lat: Number(this.dataset['lat']),
                         lng: Number(this.dataset['lng']),
