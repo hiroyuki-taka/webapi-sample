@@ -31,7 +31,7 @@ export class WorkerSample {
             })
         ).subscribe({
             next: i => {
-                this.outputElement.value = i.join(" ")
+                this.outputElement.value = i.join(" * ")
             },
         })
 
@@ -48,7 +48,7 @@ export class WorkerSample {
             })
         ).subscribe({
             next: i => {
-                this.outputElement.value = i.join(" ")
+                this.outputElement.value = i.join(" * ")
                 console.log('complete')
                 this.buttons.forEach(b => b.disabled = false)
             },

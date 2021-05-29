@@ -13,8 +13,10 @@
                 <div class="card-img-top" style="height: 600px">
                     <google-map data-lat="35.6969002" data-lng="139.7512779" style="height: 100%;"></google-map>
                 </div>
-                <div class="card-text">
-                    Shadow DOM で googlemapするサンプルです
+                <div class="card-body">
+                    <div class="card-text">
+                        Shadow DOM で googlemapするサンプルです.htmlソースを確認してみてください。
+                    </div>
                 </div>
             </div>
         </div>
@@ -23,18 +25,24 @@
                 <div class="card-header">
                     worker sample (素因数分解)
                 </div>
-                <div class="card-text">
-                    <div>
-                        <form>
-                            <div class="">
-                                <label for="in">入力値</label>
-                                <input id="in" type="number" min="1" class="form-control" value="1183483878910072701007"/>
-                            </div>
-                            <div class="mb-3">
-                                <label for="out">こたえ</label>
-                                <input id="out" type="text" disabled class="form-control"/>
-                            </div>
-                        </form>
+                <div clas="card-body">
+                    <div class="card-text">
+                        <div>
+                            <form>
+                                <div class="">
+                                    <label for="in" class="form-label">入力値</label>
+                                    <input id="in" type="number" min="1" class="form-control" value="1183483878910072701007"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="out" class="form-label">こたえ</label>
+                                    <input id="out" type="text" disabled class="form-control"/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card-text">
+                        ボタンを押した後、左のmapを操作してみてください.<br/>
+                        通常ループ実行中はUIスレッド占有中のため動きませんが、worker実行中の場合は動作します。
                     </div>
                 </div>
                 <div class="card-footer">
