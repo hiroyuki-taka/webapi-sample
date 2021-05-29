@@ -5,27 +5,30 @@
     <title>title</title>
 </head>
 <body>
-<div class="container">
-    <div class="row row-cols-1 row-cols-md-2 g-4">
+<div class="container h-100">
+    <div class="row row-cols-1 row-cols-md-2 g-4  h-100">
         <div class="col">
-            <bs-card data-title="google map (ShadowDOM sample)" data-text="Shadow DOM で bootstrapするサンプルです"
-                     style="height: 500px;">
-                <google-map data-lat="35.6969002" data-lng="139.7512779" style="height: 500px;"></google-map>
-            </bs-card>
+            <div class="card">
+                <div class="card-header">google map (ShadowDOM sample)</div>
+                <div class="card-img-top" style="height: 600px">
+                    <google-map data-lat="35.6969002" data-lng="139.7512779" style="height: 100%;"></google-map>
+                </div>
+                <div class="card-text">
+                    Shadow DOM で googlemapするサンプルです
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row">
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    worker sample
+                    worker sample (素因数分解)
                 </div>
                 <div class="card-text">
-                    <div id="worker">
+                    <div>
                         <form>
-                            <div class="mb-3">
+                            <div class="">
                                 <label for="in">入力値</label>
-                                <input id="in" type="number" min="1" class="form-control"/>
+                                <input id="in" type="number" min="1" class="form-control" value="1183483878910072701007"/>
                             </div>
                             <div class="mb-3">
                                 <label for="out">こたえ</label>
@@ -35,9 +38,9 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="button" class="btn btn-primary">通常ループ</button>
-                    <button type="button" class="btn btn-primary">setTimeout</button>
-                    <button type="button" class="btn btn-primary">Worker使用</button>
+                    <button type="button" class="btn btn-primary" id="normal">通常ループ</button>
+                    <button type="button" class="btn btn-primary" id="worker">Worker使用</button>
+                    <button type="button" class="btn btn-warning" id="clear">回答クリア</button>
                 </div>
             </div>
         </div>
